@@ -1,0 +1,23 @@
+package com.example.put.controller;
+
+import com.example.put.dto.PostRequestDto;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api")
+public class PutApiController {
+
+    @PutMapping("/put")
+    public PostRequestDto put(@RequestBody PostRequestDto postRequestDto) {
+
+        System.out.println(postRequestDto);
+        return postRequestDto;
+    }
+
+    @PutMapping("/put02/{userId}")
+    public PostRequestDto put02(@RequestBody PostRequestDto postRequestDto, @PathVariable(name = "userId" ) Long id) {
+
+        System.out.println(id);
+        return postRequestDto;
+    }
+}
